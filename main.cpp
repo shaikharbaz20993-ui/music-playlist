@@ -1,3 +1,4 @@
+/* ************* This is the simple console-based Music Playlist Management System *************/
 #include<iostream>
 using namespace std;
 class Song{
@@ -17,10 +18,12 @@ class List{
     Song* curr;
 
 public:
+    // constructor
     List(){
         head = tail = curr = NULL;
     }
 
+    // Destructor
     ~List(){
         while(head != NULL){
             Song* temp = head;
@@ -29,6 +32,7 @@ public:
         }
     }
 
+    // Add new song
     void addsong(string n){
         Song* newSong = new Song(n);
         if(head == NULL){
@@ -125,6 +129,7 @@ public:
     
     void displayPlaylist(){
 
+        // playing current song if current song is not a NULL
         if(curr != NULL){
             cout<<"\n Now playing : "<<curr->name<<endl<<endl;
         } else{
@@ -166,6 +171,8 @@ public:
 };
 int main(){
     List s1;
+
+
     cout<<"\n\n================***Music Playlist***===============\n\n\n";
 
     while(true){
